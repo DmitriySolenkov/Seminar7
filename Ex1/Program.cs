@@ -1,4 +1,4 @@
-﻿int[,] PrintArrayArray(int length1, int length2)
+﻿int[,] FillMatrix(int length1, int length2)
 {
     int[,] array = new int[length1, length2];
     for (int i = 0; i < length1; i++)
@@ -10,14 +10,17 @@
     }
     return array;
 }
-
-int[,] arr = PrintArrayArray(3, 4);
-
-for (int k = 0; k < arr.GetLength(0); k++)
+void PrintMatrix(int[,] matrix)
 {
-    for (int l = 0; l < arr.GetLength(1); l++)
+    for (int k = 0; k < matrix.GetLength(0); k++)
     {
-        Console.Write($"{arr[k, l]} ");
+        for (int l = 0; l < matrix.GetLength(1); l++)
+        {
+            Console.Write($"{matrix[k, l]}\t");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
 }
+
+int[,] arr = FillMatrix(3, 4);
+PrintMatrix(arr);
